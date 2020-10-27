@@ -7,7 +7,16 @@
       <p class="title"><%- theme.cover.title ? theme.cover.title : config.title %></p>
     <% } %>
     <% if (theme.cover.subtitle) { %>
-      <p class="subtitle"><%- theme.cover.subtitle%></p>
+      <!-- <p class="subtitle" id="typed-strings"><%- theme.cover.subtitle%></p> -->
+      <p class="subtitle" id="typed-strings"></p>
+      <div id="binft"></div>
+      <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+      <script>
+        var typed = new Typed('#typed-strings', {
+          // Waits 1000ms after typing "First"
+          strings: ['It is a test', 'Second sentence.']
+        });
+      </script>
     <% } %>
   </div>
   <div class='bottom'>
