@@ -3,6 +3,8 @@
 
 # 入门指南
 hexo官方文档: [从如何装以来，命令行，到如何构建，如何部署都由比较详细说明，照着部署就能直接开启一个blog的基本框架了] https://hexo.io/zh-cn/docs/
+
 blog主题: [基于hexo有很多主题可以选择，直接在官方主题库中找到你中意的，然后通过配置可以很快上手](https://hexo.io/themes/)
+
 volantis官方教程：[官方文档---从安装到局部设置和优化，新手入门](https://volantis.js.org/getting-started/)
 个性化设置: [blog的一些优化、特效、功能添加](https://www.itrhx.com/2018/08/27/A04-Hexo-blog-topic-personalization/)
