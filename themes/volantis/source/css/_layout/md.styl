@@ -4,15 +4,20 @@
     padding-top: 4px
   h1,h2,h3,h4,h5,h6
     position: relative
-    pointer-events: none
     margin-top: 0
     font-weight: 500
+    &:hover
+      padding-left: 10px
     >a
       color: inherit
       pointer-events: auto
       &:hover
         color: $color-hover
     if hexo-config('custom_css.md.headline_prefix') == true
+      &:hover
+        &:before
+          color: red
+          left: calc(95% - 20px)
       &:before
         content: hexo-config('custom_css.md.prefix_icon')
         color: convert(hexo-config('custom_css.md.prefix_color'))
