@@ -1,12 +1,18 @@
 ############################### Volantis ###############################
+# 仅限/source/js/中的JS文件 
+# 默认使用 https://cdn.jsdelivr.net/npm/hexo-theme-volantis/source/js/ 的CDN压缩版本，注意版本号对应关系！！可以通过修改以下配置项覆盖
+# 开发者注意 use_cdn 设置为 false
+use_cdn: true 
 info:
   theme_name: Volantis # This is theme's name.
-  theme_version: '4.1.2' # This is theme's version.
-  theme_docs: https://volantis.js.org/ # This is theme's URL.
+  theme_version: '4.1.5' # This is theme's version.
+  theme_docs: https://volantis-x.github.io/ # This is theme's URL.
   theme_repo: https://github.com/volantis-x/hexo-theme-volantis
   cdn:
     js:
     css:
+      first:
+      style:
 ########################################################################
 
 ############################### Navigation Bar ############################### > start
@@ -49,8 +55,13 @@ cover:
     others: false # can be written in front-matter 'cover: true'
   background: https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.jpg
   logo: # https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-Cover@3x.png
-  title: 渴望者
-  subtitle: I'm a subTitle
+  title: 'tech 守望者'
+  subtitle: ''
+  typed_subtitle: # 这里用了typed.js作为子标题扩展，可以输入数组字符串作为子标题，带有输入效果。
+    - 'These are the default values...'
+    - 'You know what you should do?'
+    - 'Use your own!'
+    - 'Have a great day!'
   search: A Wonderful Theme for Hexo # search bar placeholder
   features:
     - name: 文档
@@ -535,11 +546,11 @@ plugins:
     enable: #true
     js: https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@2/js/comment_typing.js
 
-  # Slide Background 幻灯片背景 封面
+  # Slide Background
   backstretch:
     enable: true
     js: https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js
-    position: fixed       # cover: 封面背景 sticky on the cover.   fixed: 网页全局背景 Fixed as background for the site.
+    position: fixed       # cover: sticky on the cover.   fixed: Fixed as background for the site.
     shuffle: true         # shuffle playlist
     duration: 10000       # Duration (ms)
     fade: 1500            # fade duration (ms) (Not more than 1500)
@@ -590,7 +601,7 @@ plugins:
     enable: true
     timeout: 5000        # The timeout in milliseconds for the XHR requests. Set to 0 to disable the timeout.
     cacheBust: false     # When set to true, Pjax appends a timestamp  to skip the browser cache.
-    animation: nprogress # nprogress, circle
+    animation: false # false, nprogress, circle
     banUrl:              # 被屏蔽的 url 地址将不启用 pjax 跳转，可以在控制台下使用 window.location.pathname 获取
       # - /artitalk/     # artitalk 不支持 pjax
 
@@ -712,8 +723,7 @@ color_scheme:
   # 亮色主题（默认）
   light:
     # 网站背景色
-    # site_bg: '#f4f4f4'
-    site_bg: https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.jpg
+    site_bg: '#f4f4f4'
     # 网站背景上的文字
     site_inner: '#fff'
     # 网站页脚文字
@@ -863,6 +873,9 @@ custom_css:
       # url: https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/Monaco/Monaco.ttf
       # weight: normal
       # style: normal
+  md:
+    headline_prefix: true
+    
 ############################### Custom css ############################### > end
 
 
