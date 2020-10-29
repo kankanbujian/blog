@@ -12,13 +12,19 @@
       pointer-events: auto
       &:hover
         color: $color-hover
-    &:before
-      content: ''
-      display: block
-      margin-top: 0 - $navbar-height +  $gap
-      height: $navbar-height + $gap * 2
-      visibility: hidden
-      pointer-events: none
+    if hexo-config('custom_css.md.headline_prefix') == true
+      &:before
+        content: '\f0e7'
+        color: red
+        font-family: 'Font Awesome 5 Free'
+    else
+      &:before
+        content: ''
+        display: block
+        margin-top: 0 - $navbar-height +  $gap
+        height: $navbar-height + $gap * 2
+        visibility: hidden
+        pointer-events: none
   h1,h2
     &:before
       margin-top: $gap-h2 - $navbar-height - $gap * 1
