@@ -14,9 +14,10 @@
         color: $color-hover
     if hexo-config('custom_css.md.headline_prefix') == true
       &:before
-        content: '\f0e7'
-        color: red
-        font-family: 'Font Awesome 5 Free'
+        content: hexo-config('custom_css.md.prefix_icon')
+        color: convert(hexo-config('custom_css.md.prefix_color'))
+        margin-right: 10px
+        @extend .font-awesome-icon
     else
       &:before
         content: ''
