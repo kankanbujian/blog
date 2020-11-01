@@ -875,10 +875,11 @@ custom_css:
       # weight: normal
       # style: normal
   md:
-    headline_prefix: true
-    prefix_icon: '\f787'
-    # 枫叶：'\f55f' 闪电：'\f0e7' car: '\f1b9' cat: '\f6be' 胡萝卜: '\f787'
-    prefix_color: '#882121'
+    h2:
+      prefix: true
+      prefix_icon: '\f787'
+      # 枫叶：'\f55f' 闪电：'\f0e7' car: '\f1b9' cat: '\f6be' 胡萝卜: '\f787'
+      prefix_color: '#882121'
     
 ############################### Custom css ############################### > end
 

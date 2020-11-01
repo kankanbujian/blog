@@ -9,3 +9,7 @@ blog主题: [基于hexo有很多主题可以选择，直接在官方主题库中
 volantis官方教程：[官方文档---从安装到局部设置和优化，新手入门](https://volantis.js.org/getting-started/)
 
 个性化设置: [blog的一些优化、特效、功能添加](https://www.itrhx.com/2018/08/27/A04-Hexo-blog-topic-personalization/)
+
+博客美化: [主题美化](http://yearito.cn/posts/hexo-theme-beautify.html)
+
+https://chocolate.blog.csdn.net/

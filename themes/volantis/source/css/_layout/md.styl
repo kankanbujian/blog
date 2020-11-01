@@ -13,17 +13,7 @@
       pointer-events: auto
       &:hover
         color: $color-hover
-    if hexo-config('custom_css.md.headline_prefix') == true
-      &:hover
-        &:before
-          color: red
-          left: calc(95% - 20px)
-      &:before
-        content: hexo-config('custom_css.md.prefix_icon')
-        color: convert(hexo-config('custom_css.md.prefix_color'))
-        margin-right: 10px
-        @extend .font-awesome-icon
-    else
+    if false
       &:before
         content: ''
         display: block
@@ -34,8 +24,9 @@
   h1,h2
     &:before
       margin-top: $gap-h2 - $navbar-height - $gap * 1
-  .article-meta+h1,.article-meta+h2
-    margin-top: $gap-h2 - $navbar-height - $gap * 4
+  if false // 不知道为啥默认偏移会不对，暂时禁用
+    .article-meta+h1,.article-meta+h2
+      margin-top: $gap-h2 - $navbar-height - $gap * 4
   h3,h4,h5,h6
     margin-bottom: $gap-p
   h3
@@ -95,3 +86,13 @@
     &:hover
       color: $color-hover
       border-color: $color-hover
+  if hexo-config('custom_css.md.h2.prefix') == true
+      h2:hover
+        &:before
+          color: red
+          left: calc(95% - 20px)
+      h2:before
+        content: hexo-config('custom_css.md.h2.prefix_icon')
+        color: convert(hexo-config('custom_css.md.h2.prefix_color'))
+        margin-right: 10px
+        @extend .font-awesome-icon
