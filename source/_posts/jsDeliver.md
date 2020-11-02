@@ -27,7 +27,7 @@ DNS的解析图不清楚可以回顾下图
 ## 如果通过jsDeliver建立免费的CDN
 当然有很多CDN服务商，其中有免费的和付费的。我用CDN的初衷很简单，就是加速本站blog的加载速度，所以使用了jsDeliver作为CDN加持我们的网络加载速度。使用方式很简单，网上也有很多的教程，这里就直接展示如何对github上的内容使用jsDeliver来引用资源，从而使用CDN来加速我们的资源请求。话不多说，直接看疗效
 
-* jsDeliver引用方式：<https://cdn.jsdelivr.net/gh/${github名}/${仓库地址}${branch名或者发布的版本号}/${具体资源路径}>
+* jsDeliver引用方式：<https://cdn.jsdelivr.net/gh/${github名}/${仓库地址}@${branch名或者发布的版本号}/${具体资源路径}>
 * 比如原始url为：<https://raw.githubusercontent.com/kankanbujian/image_host/1.0/6ccd3e8d8aa3713d0bfd7e898293f62a-md_check_style-55278c.png>
 * 使用CDN的url为：<https://cdn.jsdelivr.net/gh/kankanbujian/image_host@main/6ccd3e8d8aa3713d0bfd7e898293f62a-md_check_style-55278c.png>
 

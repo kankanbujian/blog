@@ -109,13 +109,11 @@
   <% } else { %>
     <%- css('/css/first.css') %>
   <% } %>
-
+  
   <% if (theme.use_cdn && theme.info.cdn && theme.info.cdn.css.style) { %>
-  <link rel="stylesheet" href="<%- theme.info.cdn.css %>" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="<%- theme.info.cdn.css.style %>"></noscript>
+  <%- css(theme.info.cdn.css.style) %>
   <% } else { %>
-  <link rel="stylesheet" href="/css/style.css" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css"></noscript>
+    <%- css('/css/style.css') %>
   <% } %>
 
   <script id="loadcss"></script>

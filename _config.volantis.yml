@@ -2,7 +2,7 @@
 # 仅限/source/js/中的JS文件 
 # 默认使用 https://cdn.jsdelivr.net/npm/hexo-theme-volantis/source/js/ 的CDN压缩版本，注意版本号对应关系！！可以通过修改以下配置项覆盖
 # 开发者注意 use_cdn 设置为 false
-use_cdn: true 
+use_cdn: false 
 info:
   theme_name: Volantis # This is theme's name.
   theme_version: '4.1.5' # This is theme's version.
@@ -11,17 +11,17 @@ info:
   cdn:
     js:
     css:
-      first:
-      style:
+      first: https://cdn.jsdelivr.net/gh/kankanbujian/blog@main/css/first.css
+      style: https://cdn.jsdelivr.net/gh/kankanbujian/blog@main/css/style.css
 ########################################################################
 
 ############################### Navigation Bar ############################### > start
 navbar:
-  visiable: auto # always, auto
+  visiable: always # always, auto
   logo: # choose [img] or [icon + title]
-    img: https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png
+    img: # https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png
     icon:
-    title:
+    title: 看看不见の博客
   menu:
     - name: 博客
       icon: fas fa-rss
@@ -64,30 +64,15 @@ cover:
     - 'Have a great day!'
   search: A Wonderful Theme for Hexo # search bar placeholder
   features:
-    - name: 文档
-      icon: #
-      img: https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f5c3.svg
-      url: /v4/getting-started/
-    - name: 帮助
-      icon: #
-      img: https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f516.svg
-      url: faqs/
-    - name: 示例
-      icon: #
-      img: https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f396.svg
-      url: /examples/
-    - name: 社区
-      icon: #
-      img: https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f389.svg
-      url: /contributors/
-    - name: 博客
-      icon: #
-      img: https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f4f0.svg
-      url: /archives/
-    - name: 源码
-      icon: #
-      img: https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f9ec.svg
-      url: https://github.com/volantis-x/hexo-theme-volantis/
+    # - name: 主页
+    #   icon: fa fa-home
+    #   img: # https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f5c3.svg
+    #   url: /
+    # - name: 文章
+    #   icon: fa fa-print
+    #   img: # https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f9ec.svg
+    #   url: /categories
+    
 ############################### Cover ############################### > end
 
 pages:
@@ -365,7 +350,7 @@ sidebar:
       header:
         icon: fas fa-folder-open
         title: 文章分类
-        url: /blog/categories/
+        url: /categories/
     # ---------------------------------------
     # tagcloud widget
     tagcloud:
@@ -374,7 +359,7 @@ sidebar:
       header:
         icon: fas fa-tags
         title: 热门标签
-        url: /blog/tags/
+        url: /tags/
       min_font: 14
       max_font: 24
       color: true
@@ -731,7 +716,7 @@ color_scheme:
     site_footer: '#666'
 
     # 卡片背景色
-    card: '#fff'
+    card: 'rgba(255,255,255,0.9)'
     # 卡片上的普通文字
     text: '#444'
 
@@ -816,7 +801,7 @@ custom_css:
     border: 2px
   navbar:
     height: 64px
-    width: auto # auto, max
+    width: max # auto, max
     effect: [shadow, blur] # [shadow, floatable, blur]
   sidebar:
     effect: [shadow] # [shadow, floatable, blur]
