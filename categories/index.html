@@ -422,8 +422,29 @@
                   </span>
                 </a>
               
+                <a class="" href="/blog/categories/%E5%BE%AE%E5%89%8D%E7%AB%AF/">
+                  <span><i class='fas fa-folder-open fa-fw' aria-hidden="true"></i>&nbsp;&nbsp;微前端</span>
+                  <span class="title">
+                    (1)
+                  </span>
+                </a>
+              
                 <a class="" href="/blog/categories/%E7%9B%AE%E5%BD%95/">
                   <span><i class='fas fa-folder-open fa-fw' aria-hidden="true"></i>&nbsp;&nbsp;目录</span>
+                  <span class="title">
+                    (1)
+                  </span>
+                </a>
+              
+                <a class="" href="/blog/categories/%E7%AE%97%E6%B3%95/">
+                  <span><i class='fas fa-folder-open fa-fw' aria-hidden="true"></i>&nbsp;&nbsp;-- [算法]</span>
+                  <span class="title">
+                    (1)
+                  </span>
+                </a>
+              
+                <a class="" href="/blog/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
+                  <span><i class='fas fa-folder-open fa-fw' aria-hidden="true"></i>&nbsp;&nbsp;设计模式</span>
                   <span class="title">
                     (1)
                   </span>
@@ -971,7 +992,7 @@ document.addEventListener("DOMContentLoaded", listenSearch);
       // 请求 PV 并自增
       var pvCtn = document.querySelector('#lc-sv');
       if (pvCtn || enableIncr) {
-        var pvGetter = this.getRecord(Counter, 'https://github.com/kankanbujian/blog.git' + '/#lc-sv', 'Visits').then((record) => {
+        var pvGetter = this.getRecord(Counter, 'https://kankanbujian.github.io/blog' + '/#lc-sv', 'Visits').then((record) => {
           incrArr.push(this.buildIncrement(record.objectId))
           var eles = document.querySelectorAll('#lc-sv #number');
           if (eles.length > 0) {
@@ -989,7 +1010,7 @@ document.addEventListener("DOMContentLoaded", listenSearch);
       // 请求 UV 并自增
       var uvCtn = document.querySelector('#lc-uv');
       if (uvCtn || enableIncr) {
-        var uvGetter = this.getRecord(Counter, 'https://github.com/kankanbujian/blog.git' + '/#lc-uv', 'Visitors').then((record) => {
+        var uvGetter = this.getRecord(Counter, 'https://kankanbujian.github.io/blog' + '/#lc-uv', 'Visitors').then((record) => {
           var vuv = this.validUV();
           vuv && incrArr.push(this.buildIncrement(record.objectId))
           var eles = document.querySelectorAll('#lc-uv #number');
@@ -1011,7 +1032,7 @@ document.addEventListener("DOMContentLoaded", listenSearch);
         for (i = 0; i < allPV.length; i++) {
           let pv = allPV[i];
           let title = pv.getAttribute('data-title');
-          var url = 'https://github.com/kankanbujian/blog.git' + pv.getAttribute('data-path');
+          var url = 'https://kankanbujian.github.io/blog' + pv.getAttribute('data-path');
           if (url) {
             var viewGetter = this.getRecord(Counter, url, title).then((record) => {
               // 是当前页面就自增

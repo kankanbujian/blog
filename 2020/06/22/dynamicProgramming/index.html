@@ -5,8 +5,6 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="noindex,follow">
-    
   
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
@@ -21,7 +19,9 @@
 
   <!-- 页面元数据 -->
   
-  <title>Category: build - as blog</title>
+  <title>dynamicProgramming - as blog</title>
+  
+    <meta name="keywords" content="算法">
   
 
   
@@ -310,7 +310,7 @@
     <div id="l_cover">
   
     
-        <div id="full" class='cover-wrapper  dock' style="display: none;">
+        <div id="full" class='cover-wrapper post dock' style="display: none;">
           
             <div id='cover-backstretch'></div>
           
@@ -358,77 +358,247 @@
       <div class='body-wrapper' id="pjax-container">
         
 
-
 <div class='l_main'>
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
   
+
+
+  
+  <div class="article-meta" id="top">
     
-      
-  <section class="post-list">
     
-      
+    
+      <h1 class="title">
+        dynamicProgramming
+      </h1>
+      <div class='new-meta-box'>
         
           
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="">
+    <p>请设置文章作者</p>
+  </a>
+</div>
+
+          
         
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/blog/2020/10/30/image-host/">
-        图床---搭建自己的图片仓库
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        什么是图床经常写博客肯定需要用到一些图片，这些图片可能是网络找到，也可能是自己随手截取然后上传到某个网站上的。如果这个网站对某些图片进行了限制，或者网站本身不行了，那么你的这些图片可能也就再也找不到了，毕竟很多图片都是随手所得。所以也就需要一些自己的图片存储网站,也就是image-hosting-web-site(图片托管网站)，来管理和存储我们的图片。
-可靠的图床平台选择这个的选择性对我来...
-      
-    
+          
+            
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="/blog/categories/%E7%AE%97%E6%B3%95/">-- [算法]</a>
+    </a>
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
+
+
+          
         
-        <time>2020-10-30</time>
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：Jun 22, 2020</p>
+  </a>
+</div>
+
+          
         
-          <span class="dot"></span>
-          <a class="category-link" href="/blog/categories/blog/">blog</a><span class="sep"></span><a class="category-link" href="/blog/categories/build/">build</a><span class="sep"></span><a class="category-link" href="/blog/categories/hexo/">hexo</a>
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
+      
+      <div id="lc-pv" data-title="dynamicProgramming" data-path="/blog/2020/06/22/dynamicProgramming/">
+        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
+  </div>
+
+
+          
         
       </div>
+    
+  </div>
+
+
+  
+  <h1 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h1><p>大家做算法都遇到一些动态规划的问题，从一开始不知如何入手到理解动态规划，找到每个状态之间的联系，这里记录一下自己对动态规划的理解和新的。</p>
+<h2 id="什么是动态规划"><a href="#什么是动态规划" class="headerlink" title="什么是动态规划"></a>什么是动态规划</h2><p>维基百科上对动态规划的描述是：动态规划在查找有很多重叠子问题的情况的最优解时有效。它将问题重新组合成子问题。为了避免多次解决这些子问题，它们的结果都逐渐被计算并被保存，从简单的问题直到整个问题都被解决。因此，动态规划保存递归时的结果，因而不会在解决同样的问题时花费时间。</p>
+<p>上面的话术较为官方，我们直接参照动态规划的适用情况就能比较深刻的对其了解。</p>
+<ol>
+<li>最优子结构性质：如果问题的最优解所包含的子问题的解也是最优的，我们就称该问题具有最优子结构性质（即满足最优化原理）。最优子结构性质为动态規劃算法解决问题提供了重要线索。</li>
+<li>无后效性：即子问题的解一旦确定，就不再改变，不受在这之后、包含它的更大的问题的求解决策影响。<br>子问题重叠性质。子问题重叠性质是指在用递归算法自顶向下对问题进行求解时，每次产生的子问题并不总是新问题，有些子问题会被重复计算多次。动态規劃算法正是利用了这种子问题的重叠性质，对每一个子问题只计算一次，然后将其计算结果保存在一个表格中，当再次需要计算已经计算过的子问题时，只是在表格中简单地查看一下结果，从而获得较高的效率，降低了时间复杂度。</li>
+<li>动态规划算法通常基于一个递推公式及一个或多个初始状态。当前子问题的解将由上一次子问题的解推出。使用动态规划来解题只需要多项式时间复杂度，因此它比回溯法、暴力法等要快许多。</li>
+</ol>
+<p>这里使用一个爬楼梯的例子，一个人每次最多可以爬两个台阶，每个都台阶都有需要花费的体力cost[i];给定一个楼梯cost数组，求爬完所需要的最小体力。</p>
+<p>这个问题毫无疑问是一个最优解问题，我们可以将其拆解成一个子问题，爬到第i个台阶所要的最小代价。我们将其计为dp[i]，一个人最多每次两个台阶，也就是到第i层所耗费的最小体力只和到第i-1和第i-2层所需要的最小体力有关系。其实到这里我们已经可以简单的列出一个简单关系：<br>dp[i] = Math.min(dp[i-1], d[i-2]) + cost[i];</p>
+<p>不过我们还是从0开始，以当前状态最优解找出下一个状态的最优解</p>
+<p>到第一层的最小代价： dp[0] = cost[0]</p>
+<p>到第二层的最小代价： dp[1] = cost[1];</p>
+<p>由第三层开始最小代价就是看起前两层哪个代价小采用哪个方案，然后踩到当前层即可。</p>
+<p>到第三层的最小代价：dp[2] = Math.min(dp[0], dp[1]) + cost(2);</p>
+<p>到第i层的最小代价：dp[i] = Math.min(dp[i - 1], dp[i -2]) + cost(i);<br>到了这里我们应该能写出我们的函数了</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> minCostClimbingStairs = <span class="function"><span class="keyword">function</span>(<span class="params">cost</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> length = cost.length;</span><br><span class="line">    <span class="keyword">const</span> dp = [cost[<span class="number">0</span>], cost[<span class="number">1</span>]];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">2</span>; i &lt; length ; i++ ) &#123;</span><br><span class="line">        dp[i] = cost[i] + <span class="built_in">Math</span>.min(dp[i - <span class="number">1</span>] , dp[i-<span class="number">2</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Math</span>.min(dp[length-<span class="number">1</span>],dp[length -<span class="number">2</span>] );</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>看看这个例子我们做了什么?</p>
+<ol>
+<li>将一个最优解问题拆分为一个子问题: 到第i层需要耗费的最小体力，将其存为dp[i]。</li>
+<li>我们可以判断出当dp[i]于到达前面两层的台阶有关系，于是我们希望获取其状态转移方程。如果可以我们直接列出。否则到第三部。</li>
+<li>我们从列出从第1层到第i层的每个状态下其最优解dp值，从而找到下一个状态下的最优解规律。</li>
+</ol>
+<p>我们再回头看看动态规划特性：</p>
+<ol>
+<li>最优子结构性质，也就是其子问题的拆分。无后效性：</li>
+<li>当前解只基于之前状态下的最优解，跟其后更大问题无关。</li>
+<li>动态规划算法通常基于一个递推公式及一个或多个初始状态。当前子问题的解将由上一次子问题的解推出。</li>
+</ol>
+<p>本文简单的介绍了一下动态规划的特点和其适用特性。希望对大家有所帮助和理解，大家可以结合这些特性来判断是否适合动态规划来解题，dp问题的最难点其实就是分析出当前状态基于之前状态的状态转移方程。</p>
+
+  
+  
+    
+    <div class='footer'>
       
-        <div>
-          <a class='readmore' href='/blog/2020/10/30/image-host/'>
-            Read More
-          </a>
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=https://kankanbujian.github.io/blog/2020/06/22/dynamicProgramming/>https://kankanbujian.github.io/blog/2020/06/22/dynamicProgramming/</a></p>
+              
+            
+          </blockquote>
         </div>
+      
       
     </div>
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-22T16:22:12+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：Dec 22, 2020</p>
+  </a>
 </div>
 
-          </div>
         
       
-    
-  </section>
+        
+          
   
-    
-  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/%E7%AE%97%E6%B3%95/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>算法</p></a></div>
 
 
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://kankanbujian.github.io/blog/2020/06/22/dynamicProgramming/&title=dynamicProgramming - as blog&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://kankanbujian.github.io/blog/2020/06/22/dynamicProgramming/&title=dynamicProgramming - as blog&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://kankanbujian.github.io/blog/2020/06/22/dynamicProgramming/&title=dynamicProgramming - as blog&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </div>
+
+
   
+  
+
+  
+    <div class="prev-next">
+      
+        <a class='prev' href='/blog/2020/10/26/test/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>test</p>
+          <p class='content'></p>
+        </a>
+      
+      
+    </div>
+  
+</article>
+
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+  </article>
+
+
+
+
+
+
 </div>
 <aside class='l_side'>
   
@@ -436,181 +606,28 @@
     
     
 
-<section class="widget blogger shadow desktop mobile">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/blog/about/'>
-          <img no-lazy src='https://cdn.jsdelivr.net/gh/kankanbujian/image_host@main/49cf7305828367d29e8ca67c33b9e669-avatar-47f953.jpg'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-        
-        
-          <p><span id="jinrishici-sentence">as blog</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/blog/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="mailto:me@xxx.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/volantis-x/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="/blog/"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
 
-  
 
-  
-    
-    
-  
-
-  <section class="widget category shadow desktop">
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
     
   <header>
     
-      <a href='/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
   </header>
 
 
     <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/blog/categories/blog/" href="/blog/categories/blog/"
-            id="blogcategoriesblog"
-            ><div class='name'>blog</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/blog/categories/build/" href="/blog/categories/build/"
-            id="blogcategoriesbuild"
-            ><div class='name'>build</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/blog/categories/cdn/" href="/blog/categories/cdn/"
-            id="blogcategoriescdn"
-            ><div class='name'>cdn</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/blog/categories/hexo/" href="/blog/categories/hexo/"
-            id="blogcategorieshexo"
-            ><div class='name'>hexo</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/blog/categories/markdown/" href="/blog/categories/markdown/"
-            id="blogcategoriesmarkdown"
-            ><div class='name'>markdown</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/blog/categories/styles/" href="/blog/categories/styles/"
-            id="blogcategoriesstyles"
-            ><div class='name'>styles</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/blog/categories/test/" href="/blog/categories/test/"
-            id="blogcategoriestest"
-            ><div class='name'>test</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/blog/categories/test/test2/" href="/blog/categories/test/test2/"
-            id="blogcategoriestesttest2"
-            ><div class='name'>test2</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/blog/categories/%E5%BE%AE%E5%89%8D%E7%AB%AF/" href="/blog/categories/%E5%BE%AE%E5%89%8D%E7%AB%AF/"
-            id="blogcategoriesE5BEAEE5898DE7ABAF"
-            ><div class='name'>微前端</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/blog/categories/%E7%9B%AE%E5%BD%95/" href="/blog/categories/%E7%9B%AE%E5%BD%95/"
-            id="blogcategoriesE79BAEE5BD95"
-            ><div class='name'>目录</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/blog/categories/%E7%AE%97%E6%B3%95/" href="/blog/categories/%E7%AE%97%E6%B3%95/"
-            id="blogcategoriesE7AE97E6B395"
-            ><div class='name'>-- [算法]</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/blog/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" href="/blog/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"
-            id="blogcategoriesE8AEBEE8AEA1E6A8A1E5BC8F"
-            ><div class='name'>设计模式</div><div class='badge'>(1)</div></a></li>
-        
-      </ul>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92"><span class="toc-text">什么是动态规划</span></a></li></ol>
     </div>
   </section>
 
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow desktop mobile">
-    
-  <header>
-    
-      <a href='/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/blog/tags/blog/" style="font-size: 14px; color: #999">blog</a> <a href="/blog/tags/cdn/" style="font-size: 14px; color: #999">cdn</a> <a href="/blog/tags/markdown/" style="font-size: 14px; color: #999">markdown</a> <a href="/blog/tags/%E5%BE%AE%E5%89%8D%E7%AB%AF/" style="font-size: 14px; color: #999">微前端</a> <a href="/blog/tags/%E7%AE%97%E6%B3%95/" style="font-size: 14px; color: #999">算法</a> <a href="/blog/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 14px; color: #999">设计模式</a>
-    </div>
-  </section>
-
-
-  
 
   
 
 
 </aside>
+
 
 
         
@@ -620,8 +637,8 @@
 
 <script>
   window.pdata={}
-  pdata.ispage=false;
-  pdata.postTitle="";
+  pdata.ispage=true;
+  pdata.postTitle="dynamicProgramming";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 

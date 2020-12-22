@@ -449,7 +449,7 @@
               
             
               
-                <p>本文永久链接是：<a href=https://github.com/kankanbujian/blog.git/2020/10/26/test/>https://github.com/kankanbujian/blog.git/2020/10/26/test/</a></p>
+                <p>本文永久链接是：<a href=https://kankanbujian.github.io/blog/2020/10/26/test/>https://kankanbujian.github.io/blog/2020/10/26/test/</a></p>
               
             
           </blockquote>
@@ -488,7 +488,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/kankanbujian/blog.git/2020/10/26/test/&title=test - as blog&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://kankanbujian.github.io/blog/2020/10/26/test/&title=test - as blog&summary="
           
           >
           
@@ -500,7 +500,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://github.com/kankanbujian/blog.git/2020/10/26/test/&title=test - as blog&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://kankanbujian.github.io/blog/2020/10/26/test/&title=test - as blog&summary="
           
           >
           
@@ -512,7 +512,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/kankanbujian/blog.git/2020/10/26/test/&title=test - as blog&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://kankanbujian.github.io/blog/2020/10/26/test/&title=test - as blog&summary="
           
           >
           
@@ -547,6 +547,12 @@
           <p class='content'>Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any ...</p>
         </a>
       
+      
+        <a class='next' href='/blog/2020/06/22/dynamicProgramming/'>
+          <p class='title'>dynamicProgramming<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>动态规划大家做算法都遇到一些动态规划的问题，从一开始不知如何入手到理解动态规划，找到每个状态之间的联系，这里记录一下自己对动态规划的理解和新的。
+什么是动态规划维基百科上对动态规划的描述是：动态...</p>
+        </a>
       
     </div>
   
@@ -1104,7 +1110,7 @@ document.addEventListener("DOMContentLoaded", listenSearch);
       // 请求 PV 并自增
       var pvCtn = document.querySelector('#lc-sv');
       if (pvCtn || enableIncr) {
-        var pvGetter = this.getRecord(Counter, 'https://github.com/kankanbujian/blog.git' + '/#lc-sv', 'Visits').then((record) => {
+        var pvGetter = this.getRecord(Counter, 'https://kankanbujian.github.io/blog' + '/#lc-sv', 'Visits').then((record) => {
           incrArr.push(this.buildIncrement(record.objectId))
           var eles = document.querySelectorAll('#lc-sv #number');
           if (eles.length > 0) {
@@ -1122,7 +1128,7 @@ document.addEventListener("DOMContentLoaded", listenSearch);
       // 请求 UV 并自增
       var uvCtn = document.querySelector('#lc-uv');
       if (uvCtn || enableIncr) {
-        var uvGetter = this.getRecord(Counter, 'https://github.com/kankanbujian/blog.git' + '/#lc-uv', 'Visitors').then((record) => {
+        var uvGetter = this.getRecord(Counter, 'https://kankanbujian.github.io/blog' + '/#lc-uv', 'Visitors').then((record) => {
           var vuv = this.validUV();
           vuv && incrArr.push(this.buildIncrement(record.objectId))
           var eles = document.querySelectorAll('#lc-uv #number');
@@ -1144,7 +1150,7 @@ document.addEventListener("DOMContentLoaded", listenSearch);
         for (i = 0; i < allPV.length; i++) {
           let pv = allPV[i];
           let title = pv.getAttribute('data-title');
-          var url = 'https://github.com/kankanbujian/blog.git' + pv.getAttribute('data-path');
+          var url = 'https://kankanbujian.github.io/blog' + pv.getAttribute('data-path');
           if (url) {
             var viewGetter = this.getRecord(Counter, url, title).then((record) => {
               // 是当前页面就自增

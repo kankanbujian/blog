@@ -451,7 +451,7 @@
               
             
               
-                <p>本文永久链接是：<a href=https://github.com/kankanbujian/blog.git/2020/10/30/markdown/>https://github.com/kankanbujian/blog.git/2020/10/30/markdown/</a></p>
+                <p>本文永久链接是：<a href=https://kankanbujian.github.io/blog/2020/10/30/markdown/>https://kankanbujian.github.io/blog/2020/10/30/markdown/</a></p>
               
             
           </blockquote>
@@ -493,7 +493,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/kankanbujian/blog.git/2020/10/30/markdown/&title=关于markdown小手册，方便查看，和记录一些惊艳操作 - as blog&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://kankanbujian.github.io/blog/2020/10/30/markdown/&title=关于markdown小手册，方便查看，和记录一些惊艳操作 - as blog&summary="
           
           >
           
@@ -505,7 +505,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://github.com/kankanbujian/blog.git/2020/10/30/markdown/&title=关于markdown小手册，方便查看，和记录一些惊艳操作 - as blog&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://kankanbujian.github.io/blog/2020/10/30/markdown/&title=关于markdown小手册，方便查看，和记录一些惊艳操作 - as blog&summary="
           
           >
           
@@ -517,7 +517,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/kankanbujian/blog.git/2020/10/30/markdown/&title=关于markdown小手册，方便查看，和记录一些惊艳操作 - as blog&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://kankanbujian.github.io/blog/2020/10/30/markdown/&title=关于markdown小手册，方便查看，和记录一些惊艳操作 - as blog&summary="
           
           >
           
@@ -1130,7 +1130,7 @@ document.addEventListener("DOMContentLoaded", listenSearch);
       // 请求 PV 并自增
       var pvCtn = document.querySelector('#lc-sv');
       if (pvCtn || enableIncr) {
-        var pvGetter = this.getRecord(Counter, 'https://github.com/kankanbujian/blog.git' + '/#lc-sv', 'Visits').then((record) => {
+        var pvGetter = this.getRecord(Counter, 'https://kankanbujian.github.io/blog' + '/#lc-sv', 'Visits').then((record) => {
           incrArr.push(this.buildIncrement(record.objectId))
           var eles = document.querySelectorAll('#lc-sv #number');
           if (eles.length > 0) {
@@ -1148,7 +1148,7 @@ document.addEventListener("DOMContentLoaded", listenSearch);
       // 请求 UV 并自增
       var uvCtn = document.querySelector('#lc-uv');
       if (uvCtn || enableIncr) {
-        var uvGetter = this.getRecord(Counter, 'https://github.com/kankanbujian/blog.git' + '/#lc-uv', 'Visitors').then((record) => {
+        var uvGetter = this.getRecord(Counter, 'https://kankanbujian.github.io/blog' + '/#lc-uv', 'Visitors').then((record) => {
           var vuv = this.validUV();
           vuv && incrArr.push(this.buildIncrement(record.objectId))
           var eles = document.querySelectorAll('#lc-uv #number');
@@ -1170,7 +1170,7 @@ document.addEventListener("DOMContentLoaded", listenSearch);
         for (i = 0; i < allPV.length; i++) {
           let pv = allPV[i];
           let title = pv.getAttribute('data-title');
-          var url = 'https://github.com/kankanbujian/blog.git' + pv.getAttribute('data-path');
+          var url = 'https://kankanbujian.github.io/blog' + pv.getAttribute('data-path');
           if (url) {
             var viewGetter = this.getRecord(Counter, url, title).then((record) => {
               // 是当前页面就自增

@@ -463,7 +463,7 @@
               
             
               
-                <p>本文永久链接是：<a href=https://github.com/kankanbujian/blog.git/2020/11/01/jsDeliver/>https://github.com/kankanbujian/blog.git/2020/11/01/jsDeliver/</a></p>
+                <p>本文永久链接是：<a href=https://kankanbujian.github.io/blog/2020/11/01/jsDeliver/>https://kankanbujian.github.io/blog/2020/11/01/jsDeliver/</a></p>
               
             
           </blockquote>
@@ -480,10 +480,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-02T15:09:09+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-25T15:58:29+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Nov 2, 2020</p>
+    <p>更新于：Nov 25, 2020</p>
   </a>
 </div>
 
@@ -505,7 +505,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/kankanbujian/blog.git/2020/11/01/jsDeliver/&title=jsDeliver - as blog&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://kankanbujian.github.io/blog/2020/11/01/jsDeliver/&title=jsDeliver - as blog&summary="
           
           >
           
@@ -517,7 +517,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://github.com/kankanbujian/blog.git/2020/11/01/jsDeliver/&title=jsDeliver - as blog&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://kankanbujian.github.io/blog/2020/11/01/jsDeliver/&title=jsDeliver - as blog&summary="
           
           >
           
@@ -529,7 +529,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/kankanbujian/blog.git/2020/11/01/jsDeliver/&title=jsDeliver - as blog&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://kankanbujian.github.io/blog/2020/11/01/jsDeliver/&title=jsDeliver - as blog&summary="
           
           >
           
@@ -558,6 +558,18 @@
 
   
     <div class="prev-next">
+      
+        <a class='prev' href='/blog/2020/11/04/qiankun/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>qiankun</p>
+          <p class='content'>什么微前端微前端的核心
+各个子应用完全自治，各应用的技术栈不受限制。
+独立开发和部署。
+子应用仓库独立，前后端可以独立开发，部署后，主框架能自动更新。
+
+
+增量升级
+对于已经成熟的复杂的系统来说...</p>
+        </a>
       
       
         <a class='next' href='/blog/2020/10/30/image-host/'>
@@ -1135,7 +1147,7 @@ document.addEventListener("DOMContentLoaded", listenSearch);
       // 请求 PV 并自增
       var pvCtn = document.querySelector('#lc-sv');
       if (pvCtn || enableIncr) {
-        var pvGetter = this.getRecord(Counter, 'https://github.com/kankanbujian/blog.git' + '/#lc-sv', 'Visits').then((record) => {
+        var pvGetter = this.getRecord(Counter, 'https://kankanbujian.github.io/blog' + '/#lc-sv', 'Visits').then((record) => {
           incrArr.push(this.buildIncrement(record.objectId))
           var eles = document.querySelectorAll('#lc-sv #number');
           if (eles.length > 0) {
@@ -1153,7 +1165,7 @@ document.addEventListener("DOMContentLoaded", listenSearch);
       // 请求 UV 并自增
       var uvCtn = document.querySelector('#lc-uv');
       if (uvCtn || enableIncr) {
-        var uvGetter = this.getRecord(Counter, 'https://github.com/kankanbujian/blog.git' + '/#lc-uv', 'Visitors').then((record) => {
+        var uvGetter = this.getRecord(Counter, 'https://kankanbujian.github.io/blog' + '/#lc-uv', 'Visitors').then((record) => {
           var vuv = this.validUV();
           vuv && incrArr.push(this.buildIncrement(record.objectId))
           var eles = document.querySelectorAll('#lc-uv #number');
@@ -1175,7 +1187,7 @@ document.addEventListener("DOMContentLoaded", listenSearch);
         for (i = 0; i < allPV.length; i++) {
           let pv = allPV[i];
           let title = pv.getAttribute('data-title');
-          var url = 'https://github.com/kankanbujian/blog.git' + pv.getAttribute('data-path');
+          var url = 'https://kankanbujian.github.io/blog' + pv.getAttribute('data-path');
           if (url) {
             var viewGetter = this.getRecord(Counter, url, title).then((record) => {
               // 是当前页面就自增

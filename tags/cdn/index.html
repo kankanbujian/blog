@@ -559,9 +559,24 @@
             ><div class='name'>test2</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box"
+            title="/blog/categories/%E5%BE%AE%E5%89%8D%E7%AB%AF/" href="/blog/categories/%E5%BE%AE%E5%89%8D%E7%AB%AF/"
+            id="blogcategoriesE5BEAEE5898DE7ABAF"
+            ><div class='name'>微前端</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
             title="/blog/categories/%E7%9B%AE%E5%BD%95/" href="/blog/categories/%E7%9B%AE%E5%BD%95/"
             id="blogcategoriesE79BAEE5BD95"
             ><div class='name'>目录</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/blog/categories/%E7%AE%97%E6%B3%95/" href="/blog/categories/%E7%AE%97%E6%B3%95/"
+            id="blogcategoriesE7AE97E6B395"
+            ><div class='name'>-- [算法]</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/blog/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" href="/blog/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"
+            id="blogcategoriesE8AEBEE8AEA1E6A8A1E5BC8F"
+            ><div class='name'>设计模式</div><div class='badge'>(1)</div></a></li>
         
       </ul>
     </div>
@@ -585,7 +600,7 @@
 
 
     <div class='content'>
-      <a href="/blog/tags/blog/" style="font-size: 14px; color: #999">blog</a> <a href="/blog/tags/cdn/" style="font-size: 14px; color: #999">cdn</a> <a href="/blog/tags/markdown/" style="font-size: 14px; color: #999">markdown</a>
+      <a href="/blog/tags/blog/" style="font-size: 14px; color: #999">blog</a> <a href="/blog/tags/cdn/" style="font-size: 14px; color: #999">cdn</a> <a href="/blog/tags/markdown/" style="font-size: 14px; color: #999">markdown</a> <a href="/blog/tags/%E5%BE%AE%E5%89%8D%E7%AB%AF/" style="font-size: 14px; color: #999">微前端</a> <a href="/blog/tags/%E7%AE%97%E6%B3%95/" style="font-size: 14px; color: #999">算法</a> <a href="/blog/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 14px; color: #999">设计模式</a>
     </div>
   </section>
 
@@ -1116,7 +1131,7 @@ document.addEventListener("DOMContentLoaded", listenSearch);
       // 请求 PV 并自增
       var pvCtn = document.querySelector('#lc-sv');
       if (pvCtn || enableIncr) {
-        var pvGetter = this.getRecord(Counter, 'https://github.com/kankanbujian/blog.git' + '/#lc-sv', 'Visits').then((record) => {
+        var pvGetter = this.getRecord(Counter, 'https://kankanbujian.github.io/blog' + '/#lc-sv', 'Visits').then((record) => {
           incrArr.push(this.buildIncrement(record.objectId))
           var eles = document.querySelectorAll('#lc-sv #number');
           if (eles.length > 0) {
@@ -1134,7 +1149,7 @@ document.addEventListener("DOMContentLoaded", listenSearch);
       // 请求 UV 并自增
       var uvCtn = document.querySelector('#lc-uv');
       if (uvCtn || enableIncr) {
-        var uvGetter = this.getRecord(Counter, 'https://github.com/kankanbujian/blog.git' + '/#lc-uv', 'Visitors').then((record) => {
+        var uvGetter = this.getRecord(Counter, 'https://kankanbujian.github.io/blog' + '/#lc-uv', 'Visitors').then((record) => {
           var vuv = this.validUV();
           vuv && incrArr.push(this.buildIncrement(record.objectId))
           var eles = document.querySelectorAll('#lc-uv #number');
@@ -1156,7 +1171,7 @@ document.addEventListener("DOMContentLoaded", listenSearch);
         for (i = 0; i < allPV.length; i++) {
           let pv = allPV[i];
           let title = pv.getAttribute('data-title');
-          var url = 'https://github.com/kankanbujian/blog.git' + pv.getAttribute('data-path');
+          var url = 'https://kankanbujian.github.io/blog' + pv.getAttribute('data-path');
           if (url) {
             var viewGetter = this.getRecord(Counter, url, title).then((record) => {
               // 是当前页面就自增
