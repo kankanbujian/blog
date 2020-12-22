@@ -2,7 +2,7 @@
 # 仅限/source/js/中的JS文件 
 # 默认使用 https://cdn.jsdelivr.net/npm/hexo-theme-volantis/source/js/ 的CDN压缩版本，注意版本号对应关系！！可以通过修改以下配置项覆盖
 # 开发者注意 use_cdn 设置为 false
-use_cdn: false 
+use_cdn: true 
 info:
   theme_name: Volantis # This is theme's name.
   theme_version: '4.1.5' # This is theme's version.
@@ -20,7 +20,7 @@ navbar:
   visiable: always # always, auto
   logo: # choose [img] or [icon + title]
     img: # https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png
-    icon:
+    icon: https://cdn.jsdelivr.net/gh/kankanbujian/image_host@main/49cf7305828367d29e8ca67c33b9e669-avatar-47f953.jpg
     title: 看看不见の博客
   menu:
     - name: 博客
@@ -54,13 +54,13 @@ cover:
     archive: true
     others: false # can be written in front-matter 'cover: true'
   background: https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.jpg
-  logo: # https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-Cover@3x.png
-  title: 'tech 守望者'
+  logo: https://cdn.jsdelivr.net/gh/kankanbujian/image_host@main/49cf7305828367d29e8ca67c33b9e669-avatar-47f953.jpg
+  title: 看看不见の博客
   subtitle: ''
   typed_subtitle: # 这里用了typed.js作为子标题扩展，可以输入数组字符串作为子标题，带有输入效果。
-    - 'These are the default values...'
-    - 'You know what you should do?'
-    - 'Use your own!'
+    - '生活很难，总是不断的用刀枪捅你，然后问你为什么没有刀枪不入'
+    - '所以希望能认清生活的真相，还依然热爱它'
+    - '最后愿你们'
     - 'Have a great day!'
   search: A Wonderful Theme for Hexo # search bar placeholder
   features:
@@ -316,7 +316,7 @@ sidebar:
     blogger:
       class: blogger
       display: [desktop, mobile] # [desktop, mobile]
-      avatar: https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png
+      avatar: https://cdn.jsdelivr.net/gh/kankanbujian/image_host@main/49cf7305828367d29e8ca67c33b9e669-avatar-47f953.jpg
       shape: rectangle # circle, rectangle
       url: /about/
       title:
@@ -800,7 +800,7 @@ custom_css:
     size: 4px
     border: 2px
   navbar:
-    height: 64px
+    height: 44px
     width: max # auto, max
     effect: [shadow, blur] # [shadow, floatable, blur]
   sidebar:
