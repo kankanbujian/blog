@@ -459,13 +459,13 @@
 
 <p>这是因为这个页面是服务端直接返回的一个 HTML 页面，并没有真正初始化 React 实例。只有在初始化 React 实例后，才能更新组件的 state 和 props，初始化 React 的事件系统，执行虚拟 DOM 的重新渲染机制，让React组件真正工作。因此我们需要在客户端也跑一次。</p>
 <p>在根目录下创建client文件下，创建index.js文件作为客户端入口<br>client/index.js</p>
-<figure class="highlight plain"><figcaption><span>React from 'react';</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">import ReactDom from &#39;react-dom&#39;;</span><br><span class="line">import &#123; BrowserRouter &#125; from &#39;react-router-dom&#39;</span><br><span class="line">import Home from &#39;..&#x2F;component&#x2F;Home&#39;;</span><br><span class="line"></span><br><span class="line">const App &#x3D; () &#x3D;&gt; &#123;</span><br><span class="line">return (</span><br><span class="line">    &lt;Home&gt;&lt;&#x2F;Home&gt;</span><br><span class="line">)</span><br><span class="line">&#125;</span><br><span class="line">ReactDom.hydrate(&lt;App &#x2F;&gt;, document.getElementById(&#39;root&#39;))</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> ReactDom <span class="keyword">from</span> <span class="string">&#x27;react-dom&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> Home <span class="keyword">from</span> <span class="string">&#x27;../component/Home&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> App = <span class="function">() =&gt;</span> &#123;</span><br><span class="line"><span class="keyword">return</span> (</span><br><span class="line">    &lt;Home&gt;&lt;/Home&gt;</span><br><span class="line">)</span><br><span class="line">&#125;</span><br><span class="line">ReactDom.hydrate(<span class="xml"><span class="tag">&lt;<span class="name">App</span> /&gt;</span></span>, <span class="built_in">document</span>.getElementById(<span class="string">&#x27;root&#x27;</span>))</span><br></pre></td></tr></table></figure>
 
 <p>app.js</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 加载客户端的打包后的js</span></span><br><span class="line">app.use(express.static(<span class="string">&#x27;dist&#x27;</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">// 在返回的html页面中加载js，使得客户端再次渲染</span></span><br><span class="line"><span class="string">`</span></span><br><span class="line"><span class="string">&lt;script src=&quot;/index.js&quot;&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="string">`</span></span><br></pre></td></tr></table></figure>
 
 <p>再次运行代码我们可以看到事件已经添加上去了。</p>
-<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><pre><code>本文大致将react的ssr原理基本讲清，也对同构应用做了一基本实现，后续还有ssr的路由、样式、注水、脱水，以及现在比较好的ssr框架next.js的使用和解析。如有问题，请大家指出和共同探讨。</code></pre>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>本文大致将ssr原理基本讲清，也对基于react的同构应用做了一个基本实现，后续还有ssr的路由、样式、注水、脱水，以及现在比较好的ssr框架next.js的使用和解析。欢迎大家指教和讨论，如有问题请大家指出，谢谢。</p>
 
   
   
@@ -500,7 +500,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-04T13:14:20+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-04T13:19:27+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：Jan 4, 2021</p>
