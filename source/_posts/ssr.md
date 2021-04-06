@@ -1,6 +1,6 @@
 ---
 title: ssr
-date: 2020-12-31 15:39:29
+date: 2020-11-25 15:39:29
 tags: ['react', '服务端渲染']
 categories: 
     - [react]
@@ -29,5 +29,110 @@ categories:
 ## 基于React的ssr实现
 
 我们先完成一个最简单的ssr应用。首先我们需要搭建一个简单的node.js服务器，对其发送请求可以返回一个完整的html页面
+我们在src下创建一个components，用于存放服务端和客户端都会用到的同构组件Home.js，在src下创建一个服务端的启动文件。
+Home.js
 
+```javascript
+    const React = require('react');
 
+    const Home = () => {
+        return (
+        <div>
+            <div>This is Home</div>
+        </div>
+        )
+    }
+
+    module.exports = Home;
+
+```
+
+app.js
+
+```javascript
+    const express = require('express');
+    const React = require('react');
+    const {renderToString} = require('react-dom/server');
+    const app = express();
+    require('node-jsx').install();
+
+    const Home = require('./components/home');
+    const content = renderToString(React.createElement(Home));
+    app.use('/', (req, res, next) => {
+        res.send(`
+        <html>
+        <head>
+            <title>ssr</title>
+        </head>
+        <body>
+            <div id="root">${content}</div>
+        </body>
+        </html>
+    `)
+    })
+
+    app.listen(3001, () => {
+        console.log('3001 port is started');
+    })
+
+```
+
+基于此，node .\src\app.js，就能开启我们的express框架下搭建起来的简单服务端，基于react的ssr服务端渲染项目就构造好了。可以看到页面被渲染出来，后端返回的完整html。
+![ssr page render init](https://cdn.jsdelivr.net/gh/kankanbujian/image_host@main/65b878a914296bf6d38ee7ac595bc2ee-ssr_init-e3a791.png)
+
+注意：
+
+1. 引入node-jsx，可以在node.js下对jsx模块进行支持，可以理解为babel的作用。
+2. 同构项目得以实现本质上是因为react提出的虚拟dom，在页面操作时，react实际操作的不是真实dom而是虚拟dom(普通的js对象)。这就使得服务端对"dom"操作成为可能。react-dom有专门为服务端渲染提供的api, 可以参看react-dom/server下内容。本例中使用的ReactDOMServer.renderToString(element)可以将react元素渲染为html，然后返回一个html字符串，由此服务端获取到完整的html页面从而实现服务端渲染。
+
+## 添加事件
+
+现在我们尝试给组件添加事件，发现不会生效
+
+```javascript
+    const Home = () => {
+        return (
+            <div>
+                <div>This is Home</div>
+                <button onClick={() => {console.log('btn is clicked')}}>按钮</button>
+            </div>
+        )
+    }
+```
+
+这是因为这个页面是服务端直接返回的一个 HTML 页面，并没有真正初始化 React 实例。只有在初始化 React 实例后，才能更新组件的 state 和 props，初始化 React 的事件系统，执行虚拟 DOM 的重新渲染机制，让React组件真正工作。因此我们需要在客户端也跑一次。
+
+在根目录下创建client文件下，创建index.js文件作为客户端入口
+client/index.js
+
+```javascript
+    import React from 'react';
+    import ReactDom from 'react-dom';
+    import Home from '../component/Home';
+
+    const App = () => {
+    return (
+        <Home></Home>
+    )
+    }
+    ReactDom.hydrate(<App />, document.getElementById('root'))
+```
+
+app.js
+
+```javascript
+    // 加载客户端的打包后的js
+    app.use(express.static('dist'));
+
+    // 在返回的html页面中加载js，使得客户端再次渲染
+    `
+    <script src="/index.js"></script>
+    `
+```
+
+再次运行代码我们可以看到事件已经添加上去了。
+![添加事件成功](https://cdn.jsdelivr.net/gh/kankanbujian/image_host@main/635a99af91e73e8ce0a3361c4a65543f-ssr_add_event-3f5e26.png)
+
+### 小结
+
+本文大致将ssr原理基本讲清，也对基于react的同构应用做了一个基本实现，后续还有ssr的路由、样式、注水、脱水，以及现在比较好的ssr框架next.js的使用和解析。欢迎大家指教和讨论，如有问题请大家指出，谢谢。
