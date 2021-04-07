@@ -21,7 +21,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>Category: hexo - as blog</title>
+  <title>Archive: 2021/3 - as blog</title>
   
 
   
@@ -57,7 +57,7 @@
 <body>
   
 
-<header id="l_header" class="l_header always shadow blur show"  >
+<header id="l_header" class="l_header always shadow blur "  >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -310,7 +310,7 @@
     <div id="l_cover">
   
     
-        <div id="full" class='cover-wrapper  dock' style="display: none;">
+        <div id="half" class='cover-wrapper  dock' style="display: ;">
           
             <div id='cover-backstretch'></div>
           
@@ -358,11 +358,9 @@
       <div class='body-wrapper' id="pjax-container">
         
 
-
 <div class='l_main'>
-  
-    
-      
+	
+		
   <section class="post-list">
     
       
@@ -382,16 +380,16 @@
   
     
     <h2 class="article-title" >
-      <a href="/blog/2020/10/30/image-host/">
-        图床---搭建自己的图片仓库
+      <a href="/blog/2021/03/06/redux-router/">
+        redux-router
       </a>
     </h2>
   
   <div class='md'>
     
       
-        什么是图床经常写博客肯定需要用到一些图片，这些图片可能是网络找到，也可能是自己随手截取然后上传到某个网站上的。如果这个网站对某些图片进行了限制，或者网站本身不行了，那么你的这些图片可能也就再也找不到了，毕竟很多图片都是随手所得。所以也就需要一些自己的图片存储网站,也就是image-hosting-web-site(图片托管网站)，来管理和存储我们的图片。
-可靠的图床平台选择这个的选择性对我来...
+        redux-router今天我们完成一个react的路由系统，顾名思义，它是一个react官方维护的，也是唯一一个可选的路由库，本质上就是通过管理url路径来对页面的react组件进行更新渲染。
+思路主要用到的思想其实是一个全局的路由管理，从react组件的最外层到最里层都能获取到唯一的网页url、history、hash等属性，通过监听页面的url变化来引起全局的属性的更新，从而从外到内的...
       
     
   </div>
@@ -399,15 +397,15 @@
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time>2020-10-30</time>
+        <time>2021-03-06</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/blog/categories/blog/">blog</a><span class="sep"></span><a class="category-link" href="/blog/categories/build/">build</a><span class="sep"></span><a class="category-link" href="/blog/categories/hexo/">hexo</a>
+          <a class="category-link" href="/blog/categories/redux-router/">redux-router</a><span class="sep"></span><a class="category-link" href="/blog/categories/%E6%89%8B%E5%86%99%E7%B3%BB%E5%88%97/">手写系列</a>
         
       </div>
       
         <div>
-          <a class='readmore' href='/blog/2020/10/30/image-host/'>
+          <a class='readmore' href='/blog/2021/03/06/redux-router/'>
             Read More
           </a>
         </div>
@@ -427,8 +425,7 @@
   
 
 
-    
-  
+	
 </div>
 <aside class='l_side'>
   
@@ -637,7 +634,7 @@
 
   var l_header=document.getElementById("l_header");
   
-  l_header.classList.add("show");
+  l_header.classList.remove("show");
   
 </script>
 
