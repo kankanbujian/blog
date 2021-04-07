@@ -1,10 +1,11 @@
 ---
 title: redux
 date: 2020-12-11 23:28:50
-tags: - [手写系列, redux]
+tags: [手写系列, redux]
 
-categories: - [手写系列] 
-            - [redux]
+categories: 
+    - [手写系列] 
+    - [redux]
 ---
 
 # Redux

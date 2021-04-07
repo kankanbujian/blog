@@ -1,8 +1,10 @@
 ---
 title: redux-router
 date: 2021-03-06 17:23:12
-categories: - [手写系列] 
-            - [redux-router]
+tags: [手写系列, redux-router] 
+categories: 
+    - [手写系列] 
+    - [redux-router]
 ---
 
 
