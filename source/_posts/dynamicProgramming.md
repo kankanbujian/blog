@@ -2,8 +2,8 @@
 title: dynamicProgramming
 date: 2020-06-22 14:53:00
 tags: 算法
-categories: --
-    [算法]
+categories:
+    - [算法]
 ---
 
 # 动态规划
