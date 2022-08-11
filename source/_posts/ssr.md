@@ -26,6 +26,7 @@ categories:
 1. 在服务器上生成渲染内容：加速首屏和seo搜索.
 2. 客户端执行js脚本完成对应的页面绑定、用户交互.
 
+![流程](https://s8.51cto.com/images/blog/202101/17/c0c8bf3d3d6262c1a08a31fffd46345b.png)
 ## 基于React的ssr实现
 
 我们先完成一个最简单的ssr应用。首先我们需要搭建一个简单的node.js服务器，对其发送请求可以返回一个完整的html页面
