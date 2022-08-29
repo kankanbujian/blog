@@ -1,29 +1,26 @@
-// // export var a = 1
-// export let a = 1
-// import './b.js'
 
-// // export function a() {
-// //     console.log('afunction')
+// // part1 
+//  let a = 1
+//  exports = {
+//     a
+//  }
+// // export function updateA() {
+// //     a = 2
 // // }
-// // export default a
-
-// export function b() {
-//     a = 2
-// }
-
 // console.log('a----start', a)
 
+// console.log('a---', a)
 
-console.log('a---', a)
 
-let a = 1
 
-{
-    let a = 2
+// part 3
 
-    console.log('a---another', a)
-    {
-        let a = 3
-    }
+// const b = require('./b')
 
-}
+// console.log('a---start')
+
+// console.log('a---b', b)
+
+// exports.a = 1
+
+export let a = 1

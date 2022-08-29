@@ -1,15 +1,10 @@
 "use strict"
 
-import './b.js'
+import {b} from './b.js'
+export let a = 1
 
-// export let a = 1
-function a() {
-    console.log('afunction')
-}
-export default a
 
-// export function b() {
-//     a = 2
-// }
 
-console.log('a----start', a)
+console.log('a---start, ', b)
+
+
