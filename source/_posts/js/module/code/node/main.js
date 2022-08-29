@@ -1,1 +1,0 @@
-(()=>{"use strict";let o=1;console.log("a----start",o),console.log("index---start----"),console.log("a---",o),o=2,console.log("a--bchange",o)})();

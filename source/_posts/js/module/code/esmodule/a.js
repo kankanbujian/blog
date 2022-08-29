@@ -1,3 +1,5 @@
+"use strict"
+
 import './b.js'
 
 // export let a = 1
