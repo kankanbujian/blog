@@ -1,0 +1,62 @@
+---
+title: 防抖与节流
+date: 2021-01-04 17:28:03
+tags: ['手写系列', 'js']
+categories: 
+    - [手写系列]
+    - [js]
+---
+
+### 防抖和节流可以说是很经典的两个函数了，两个函数的意义其实差不多，而且一些库对两个函数都做了一些配置项处理，可以实现相互转换的功能。两者的相同处都是为了防止某些行为被频繁的触发而采用的机制，区别也很简单
+
+* 防抖在于在某个时间内如果时间被频繁出发则相当于他在持续抖动，则会将触发机制延续下去，知道下一个当前行为没有抖动才会触发。
+* 节流顾名思义，当某个方法在一定时间范围被触发时，该方法无法再次被触发
+
+所以区别在于防抖相当于在一定范围内该行为再次触发则延时下去，节流则是在一定防伪内该行为再次触发则无视
+
+对于行为的延时触发和取消我们很简单的可以想到js的定时器去处理，并且每次触发该行为的时候我们需要检测当前上一个定时器是否存在，并且时间到了以后我们还要取消掉当前定时器，所以我们可以想到
+1. 需要用闭包来持有一个定时器
+2. 通过定时器来判断当前时间范围是否已有任务要执行
+3. 已有任务要执行，要处理防抖或节流
+
+### 防抖实现
+```js 
+    function debounce(fn, wait, immedate) {
+        let timer  = null
+        return (...args) => {
+            if (timer) {
+                clearTimeout(timer)
+            }
+            if (immedate) {
+                let immedateDo = !timer
+                setTimeout(() => {
+                    clearTimeout(timer)
+                    timer = null
+                }, wait)
+                if (immedateDo) fn.call(this, args)
+            } else {
+                timer = setTimeout(() => {
+                    fn.call(this, args)
+                }, wait)
+            }
+            
+            
+        }
+    }
+```
+
+### 节流实现
+```js 
+    function throttle(fn, wait) {
+        let timer  = null
+        return (...args) => {
+            if (timer) return
+            timer = setTimeout(() => {
+                fn.call(this, args)
+                clearTimeot(timer)
+                timer = null
+            }, wait)
+        }
+    }
+```
+

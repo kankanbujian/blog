@@ -383,3 +383,20 @@ ES Module 会被自动加上严格模式，可以看到代码在编译期间自�
 ## 一些小的注意点
     1. 这import和export两个方法只能在最顶层使用，因为如果放到函数或者其他块语句比如条件语句内部则需要动态运行才能确定，违反了静态化的原则。
     2. 由于import在编译时处理，所以会被提升到顶部。
+
+
+本题可以采用「单调栈」的解法，可以参考「496. 下一个更大元素 I 的官方题解」。使用单调栈先预处理 \textit{prices}prices，使得查询 \textit{prices}prices 中每个元素对应位置的右边的第一个更小的元素值时不需要再遍历 \textit{prices}prices。解法的重点在于考虑如何更高效地计算 \textit{prices}prices 中每个元素右边第一个更小的值。倒序遍历 \textit{prices}prices，并用单调栈中维护当前位置右边的更小的元素列表，从栈底到栈顶的元素是单调递增的。具体每次我们移动到数组中一个新的位置 ii，就将单调栈中所有大于 \textit{prices}[i]prices[i] 的元素弹出单调栈，当前位置右边的第一个小于等于 \textit{prices}[i]prices[i] 的元素即为栈顶元素，如果栈为空则说明当前位置右边没有更大的元素，随后我们将位置 ii 的元素入栈。
+
+当遍历第 ii 个元素 \textit{prices}[i]prices[i] 时：
+
+如果当前栈顶的元素大于 \textit{prices}[i]prices[i]，则将栈顶元素出栈，直到栈顶的元素小于等于 \textit{prices}[i]prices[i]，栈顶的元素即为右边第一个小于 \textit{prices}[i]prices[i] 的元素；
+
+如果当前栈顶的元素小于等于 \textit{prices}[i]prices[i]，此时可以知道当前栈顶元素即为 ii 的右边第一个小于等于 \textit{prices}[i]prices[i] 的元素，此时第 ii 个物品折后的价格为 \textit{prices}[i]prices[i] 与栈顶的元素的差。
+
+如果当前栈中的元素为空，则此时折扣为 00，商品的价格为原价 \textit{prices}[i]prices[i]；
+
+将 \textit{prices}[i]prices[i] 压入栈中，保证 \textit{prices}[i]prices[i] 为当前栈中的最大值；
+
+Python3C++JavaC#CJavaScriptGolang
+
+
